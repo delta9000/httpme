@@ -11,6 +11,12 @@ It can automatically select an available port or use a port defined by the user.
 * `-port`: Specify the port to listen on (default: random available port).
 * `-address`: Specify the address to bind to (default: localhost).
 * `-path`: Specify the directory path to serve (default: current directory).
+* `-tls`: Enable TLS (default: false).
+* `-cert`: Specify the TLS certificate file (default: none).
+* `-key`: Specify the TLS key file (default: none).
+* `-help`: Display help message.
+* `-version`: Display version information.
+
 
 ### Examples
 - Serve the current directory on a random free port on localhost:
@@ -21,6 +27,11 @@ httpme
 - Serve files from /path/to/directory on http://0.0.0.0:8080/
 ```bash
 httpme -port=8080 -address=0.0.0.0 -path=/path/to/directory
+```
+
+- Serve files from /path/to/directory on https://
+```bash
+httpme -tls -cert /path/to/cert.pem -key /path/to/key.pem -path /path/to/directory
 ```
 
 ## Installing
