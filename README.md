@@ -1,4 +1,8 @@
 # httpme - Quick HTTP Server
+![Build Status](https://github.com/delta9000/httpme/workflows/Go/badge.svg)
+![Go Report Card](https://goreportcard.com/badge/github.com/delta9000/httpme)
+![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
+
 httpme is a simple command-line HTTP server that serves files from a specified directory. 
 
 It can automatically select an available port or use a port defined by the user.

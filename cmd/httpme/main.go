@@ -16,6 +16,7 @@ func main() {
 	port := flag.Int("port", 0, "Port to listen on, default is a random port")
 	address := flag.String("address", "localhost", "Address to bind to")
 	rootPath := flag.String("path", "./", "Path to serve")
+	version := flag.Bool("version", false, "Print version and exit")
 
 	absRootPath, err := filepath.Abs(*rootPath)
 	if err != nil {
@@ -24,6 +25,10 @@ func main() {
 
 	flag.Parse()
 
+	if *version {
+		fmt.Println("httpme v0.1.1")
+		return
+	}
 	// Create a listener on the specified port or a free port
 	listener, err := net.Listen("tcp", net.JoinHostPort(*address, strconv.Itoa(*port)))
 	if err != nil {
