@@ -22,7 +22,7 @@ httpme -port=8080 -address=0.0.0.0 -path=/path/to/directory
 ## Installing
 To install httpme, use the following command:
 ```bash
-go install github.com/delta9000/httpme@latest
+go install github.com/delta9000/httpme/cmd/httpme@latest
 ```
 
 ## License
