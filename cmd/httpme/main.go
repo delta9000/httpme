@@ -53,13 +53,13 @@ func main() {
 		}
 	}
 
-	if !*tls && (*cert != "" || *key != "") {
-		log.Printf("Warning: TLS certificate or key provided but -tls not provided")
-	}
-
 	if *version {
 		fmt.Println("httpme v0.1.2")
 		return
+	}
+
+	if tls == nil && (*cert != "" || *key != "") {
+		log.Printf("Warning: TLS certificate or key provided but -tls not provided")
 	}
 
 	listener, err := net.Listen("tcp", net.JoinHostPort(*address, strconv.Itoa(*port)))
